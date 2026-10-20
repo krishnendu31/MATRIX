@@ -1,0 +1,6 @@
+-r requirements.txt
+# Tests
+pytest==8.4.2
+# Optional: cross-check our SHAP / LIME implementations against the reference libraries
+shap>=0.44
+lime>=0.2.0.1

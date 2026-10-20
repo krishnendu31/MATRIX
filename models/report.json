@@ -1,0 +1,436 @@
+{
+  "dataset": {
+    "messages": 5171,
+    "spam_share": 0.12628118352349643,
+    "duplicates_removed": 403,
+    "train": 4136,
+    "test": 1035
+  },
+  "test": {
+    "precision": 0.991869918699187,
+    "recall": 0.9312977099236641,
+    "f1": 0.9606299212598425,
+    "false_positive_rate": 0.0011061946902654867,
+    "roc_auc": 0.9979227183678984,
+    "tp": 122,
+    "fp": 1,
+    "tn": 903,
+    "fn": 9
+  },
+  "threshold": 0.5,
+  "seed": 42,
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6"
+  },
+  "cv": {
+    "cv_f1_mean": 0.9606693938862861,
+    "cv_f1_std": 0.01584871375617313,
+    "cv_precision_mean": 0.9801484304697231,
+    "cv_recall_mean": 0.9424542124542123,
+    "cv_fpr_mean": 0.002767401140983054
+  },
+  "comparison": [
+    {
+      "model": "MATRIX (Logistic Regression + Platt)",
+      "cv_f1_mean": 0.9606693938862861,
+      "cv_f1_std": 0.01584871375617313,
+      "cv_precision_mean": 0.9801484304697231,
+      "cv_recall_mean": 0.9424542124542123,
+      "cv_fpr_mean": 0.002767401140983054,
+      "test_precision": 0.991869918699187,
+      "test_recall": 0.9312977099236641,
+      "test_f1": 0.9606299212598425,
+      "test_fpr": 0.0011061946902654867,
+      "test_roc_auc": 0.9979227183678984,
+      "test_tp": 122,
+      "test_fp": 1,
+      "test_tn": 903,
+      "test_fn": 9,
+      "explainable_exactly": true
+    },
+    {
+      "model": "Logistic Regression, uncalibrated",
+      "cv_f1_mean": 0.9422171531008923,
+      "cv_f1_std": 0.030165519847771053,
+      "cv_precision_mean": 0.9852582973901317,
+      "cv_recall_mean": 0.9041025641025641,
+      "cv_fpr_mean": 0.0019371424849522801,
+      "test_precision": 0.9917355371900827,
+      "test_recall": 0.916030534351145,
+      "test_f1": 0.9523809523809523,
+      "test_fpr": 0.0011061946902654867,
+      "test_roc_auc": 0.9979227183678984,
+      "test_tp": 120,
+      "test_fp": 1,
+      "test_tn": 903,
+      "test_fn": 11,
+      "explainable_exactly": true
+    },
+    {
+      "model": "Naive Bayes",
+      "cv_f1_mean": 0.9590270263613604,
+      "cv_f1_std": 0.019183572354400796,
+      "cv_precision_mean": 0.9937617937617939,
+      "cv_recall_mean": 0.9271245421245421,
+      "cv_fpr_mean": 0.0008298755186721991,
+      "test_precision": 0.983739837398374,
+      "test_recall": 0.9236641221374046,
+      "test_f1": 0.952755905511811,
+      "test_fpr": 0.0022123893805309734,
+      "test_roc_auc": 0.9958961021414577,
+      "test_tp": 121,
+      "test_fp": 2,
+      "test_tn": 902,
+      "test_fn": 10,
+      "explainable_exactly": false
+    },
+    {
+      "model": "Linear SVM (Platt)",
+      "cv_f1_mean": 0.957402795201039,
+      "cv_f1_std": 0.01964321351071493,
+      "cv_precision_mean": 0.9819759155309027,
+      "cv_recall_mean": 0.9347619047619047,
+      "cv_fpr_mean": 0.002490775968092321,
+      "test_precision": 0.991869918699187,
+      "test_recall": 0.9312977099236641,
+      "test_f1": 0.9606299212598425,
+      "test_fpr": 0.0011061946902654867,
+      "test_roc_auc": 0.9986995879213674,
+      "test_tp": 122,
+      "test_fp": 1,
+      "test_tn": 903,
+      "test_fn": 9,
+      "explainable_exactly": false
+    }
+  ],
+  "calibration": {
+    "brier_raw": 0.00947760136801496,
+    "brier_calibrated": 0.008051455813848002,
+    "ece_raw": 0.016698637875382564,
+    "ece_calibrated": 0.0038665740917726947
+  },
+  "lime_shap_agreement": {
+    "messages": 298,
+    "top5_overlap_mean": 0.8393736017897091,
+    "spearman_mean": 0.8981902863908295,
+    "sign_agreement_mean": 0.9772930648769576,
+    "lime_fidelity_r2_mean": 0.4143079147489908,
+    "lime_stability_mean": 0.8888888888888888,
+    "share_low_agreement": 0.010067114093959731,
+    "top5_overlap_spam": 0.7789473684210528,
+    "top5_overlap_ham": 0.8482051282051282
+  },
+  "faithfulness": {
+    "messages": 262,
+    "k": 3,
+    "drop_prob_shap": 0.0705973910578264,
+    "drop_logodds_shap": 1.4883685446035761,
+    "drop_prob_lime": 0.0728234336089582,
+    "drop_logodds_lime": 1.5122233815617372,
+    "drop_prob_random": 0.005832988093391483,
+    "drop_logodds_random": 0.15854373718762127
+  },
+  "counterfactuals": {
+    "search": "greedy removal tested on the model at every step, then pruning; max 10 words",
+    "flagged_messages": 123,
+    "flip_found": 0.959349593495935,
+    "median_words_removed": 5.0,
+    "share_flipped_with_1_word": 0.0975609756097561,
+    "missed_spam": 9,
+    "missed_spam_flip_found": 0.4444444444444444
+  },
+  "robustness": [
+    {
+      "attack": "leetspeak",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "spam",
+      "n_tested": 119,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 1.0
+    },
+    {
+      "attack": "leetspeak",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "normal",
+      "n_tested": 287,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 0.9976771196283393
+    },
+    {
+      "attack": "leetspeak",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "spam",
+      "n_tested": 119,
+      "label_kept": 0.9747899159663865,
+      "explanation_top3_kept": 0.7731092436974791
+    },
+    {
+      "attack": "leetspeak",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "normal",
+      "n_tested": 287,
+      "label_kept": 0.9930313588850174,
+      "explanation_top3_kept": 0.6132404181184669
+    },
+    {
+      "attack": "spacing",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "spam",
+      "n_tested": 121,
+      "label_kept": 0.9917355371900827,
+      "explanation_top3_kept": 0.9752066115702479
+    },
+    {
+      "attack": "spacing",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "normal",
+      "n_tested": 288,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 0.9247685185185186
+    },
+    {
+      "attack": "spacing",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "spam",
+      "n_tested": 121,
+      "label_kept": 0.9173553719008265,
+      "explanation_top3_kept": 0.7272727272727272
+    },
+    {
+      "attack": "spacing",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "normal",
+      "n_tested": 288,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 0.5405092592592593
+    },
+    {
+      "attack": "stretching",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "spam",
+      "n_tested": 121,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 1.0
+    },
+    {
+      "attack": "stretching",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "normal",
+      "n_tested": 288,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 1.0
+    },
+    {
+      "attack": "stretching",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "spam",
+      "n_tested": 121,
+      "label_kept": 0.9752066115702479,
+      "explanation_top3_kept": 0.7438016528925618
+    },
+    {
+      "attack": "stretching",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "normal",
+      "n_tested": 288,
+      "label_kept": 0.9930555555555556,
+      "explanation_top3_kept": 0.6006944444444444
+    },
+    {
+      "attack": "typo",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "spam",
+      "n_tested": 121,
+      "label_kept": 0.9834710743801653,
+      "explanation_top3_kept": 0.7851239669421486
+    },
+    {
+      "attack": "typo",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "normal",
+      "n_tested": 285,
+      "label_kept": 0.9929824561403509,
+      "explanation_top3_kept": 0.6169590643274853
+    },
+    {
+      "attack": "typo",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "spam",
+      "n_tested": 121,
+      "label_kept": 0.9834710743801653,
+      "explanation_top3_kept": 0.7851239669421486
+    },
+    {
+      "attack": "typo",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "normal",
+      "n_tested": 285,
+      "label_kept": 0.9929824561403509,
+      "explanation_top3_kept": 0.6192982456140351
+    },
+    {
+      "attack": "synonym",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "spam",
+      "n_tested": 107,
+      "label_kept": 0.9906542056074766,
+      "explanation_top3_kept": 0.7476635514018691
+    },
+    {
+      "attack": "synonym",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "normal",
+      "n_tested": 0,
+      "label_kept": NaN,
+      "explanation_top3_kept": NaN
+    },
+    {
+      "attack": "synonym",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "spam",
+      "n_tested": 107,
+      "label_kept": 0.9906542056074766,
+      "explanation_top3_kept": 0.7476635514018691
+    },
+    {
+      "attack": "synonym",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "normal",
+      "n_tested": 0,
+      "label_kept": NaN,
+      "explanation_top3_kept": NaN
+    },
+    {
+      "attack": "capitalization",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "spam",
+      "n_tested": 122,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 1.0
+    },
+    {
+      "attack": "capitalization",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "normal",
+      "n_tested": 298,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 1.0
+    },
+    {
+      "attack": "capitalization",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "spam",
+      "n_tested": 122,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 1.0
+    },
+    {
+      "attack": "capitalization",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "normal",
+      "n_tested": 298,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 1.0
+    },
+    {
+      "attack": "url_swap",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "spam",
+      "n_tested": 16,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 1.0
+    },
+    {
+      "attack": "url_swap",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "normal",
+      "n_tested": 2,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 0.8333333333333333
+    },
+    {
+      "attack": "url_swap",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "spam",
+      "n_tested": 16,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 1.0
+    },
+    {
+      "attack": "url_swap",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "normal",
+      "n_tested": 2,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 0.8333333333333333
+    },
+    {
+      "attack": "url_defang",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "spam",
+      "n_tested": 16,
+      "label_kept": 0.9375,
+      "explanation_top3_kept": 0.6666666666666666
+    },
+    {
+      "attack": "url_defang",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "normal",
+      "n_tested": 2,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 0.8333333333333333
+    },
+    {
+      "attack": "url_defang",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "spam",
+      "n_tested": 16,
+      "label_kept": 0.9375,
+      "explanation_top3_kept": 0.6666666666666666
+    },
+    {
+      "attack": "url_defang",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "normal",
+      "n_tested": 2,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 0.8333333333333333
+    },
+    {
+      "attack": "greeting",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "spam",
+      "n_tested": 122,
+      "label_kept": 0.9672131147540983,
+      "explanation_top3_kept": 0.9972677595628415
+    },
+    {
+      "attack": "greeting",
+      "model": "MATRIX (de-obfuscation on)",
+      "message_class": "normal",
+      "n_tested": 299,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 0.7861952861952862
+    },
+    {
+      "attack": "greeting",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "spam",
+      "n_tested": 122,
+      "label_kept": 0.9672131147540983,
+      "explanation_top3_kept": 0.9945355191256832
+    },
+    {
+      "attack": "greeting",
+      "model": "Ablation (de-obfuscation off)",
+      "message_class": "normal",
+      "n_tested": 299,
+      "label_kept": 1.0,
+      "explanation_top3_kept": 0.7850729517396183
+    }
+  ],
+  "ablation_clean_test_f1_without_deobfuscation": 0.9606299212598425,
+  "runtime_seconds": 174.9
+}

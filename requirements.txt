@@ -1,0 +1,11 @@
+# Pinned to the versions MATRIX was trained and tested with (Python 3.13, Windows 11).
+# The saved model (models/matrix.joblib) must be loaded with the same scikit-learn version.
+# Core (model, explanations, evaluation)
+numpy==2.5.4
+pandas==3.0.6
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
+# Interface
+streamlit==1.66.0
+plotly==7.1.0
